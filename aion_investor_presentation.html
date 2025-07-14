@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AION Therapeutic - Investor Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background: white;
+            margin-bottom: 2px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-title {
+            font-size: 3em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .slide-subtitle {
+            font-size: 1.5em;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+
+        .title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-20px) rotate(360deg); }
+        }
+
+        .company-logo {
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .stock-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .stock-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stock-label {
+            font-size: 1em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .stock-value {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .summary-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .summary-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-section li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .summary-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .highlight-number {
+            font-size: 3em;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-number {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .metric-label {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        .problem-solution {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .problem-title {
+            color: #e74c3c;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .solution-title {
+            color: #27ae60;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .technology-slide {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .team-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .team-title {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .advantage {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .disadvantage {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .market-chart {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .financials-slide {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+
+        .cta-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+            }
+            
+            .slide-title {
+                font-size: 2em;
+            }
+            
+            .summary-grid,
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stock-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- Title Slide -->
+        <div class="slide title-slide">
+            <div class="company-logo">AION THERAPEUTIC</div>
+            <div class="tagline">INVESTING IN THE FUTURE OF WATER</div>
+            <div class="slide-subtitle">Revolutionizing Water Filtration with MicronGuard Technology</div>
+            
+            <div class="stock-info">
+                <div class="stock-item">
+                    <div class="stock-label">Exchange</div>
+                    <div class="stock-value">CSE: AION</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-label">Share Price</div>
+                    <div class="stock-value">C$0.01</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-label">Market Cap</div>
+                    <div class="stock-value">C$4.9M</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="slide executive-summary">
+            <div class="slide-header">
+                <h1 class="slide-title">Executive Summary</h1>
+                <p class="slide-subtitle">Investment Opportunity Overview</p>
+            </div>
+            
+            <div class="highlight-box">
+                <span class="highlight-number">$9.57B</span>
+                U.S. Water Filtration Market by 2030 (5.6% CAGR)
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-section">
+                    <h3>🎯 The Opportunity</h3>
+                    <ul>
+                        <li>PFAS "forever chemicals" crisis affecting 70M+ Americans</li>
+                        <li>New EPA standards create $9B federal funding opportunity</li>
+                        <li>Growing consumer demand for certified water filtration</li>
+                        <li>Regulatory tailwinds driving market expansion</li>
+                    </ul>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>💡 Our Solution</h3>
+                    <ul>
+                        <li>MicronGuard: 99.99% PFAS removal (NSF certified)</li>
+                        <li>50-93% margins with recurring revenue model</li>
+                        <li>Zero power, chemicals, or wastewater required</li>
+                        <li>$1,600 vs $15,000+ for traditional systems</li>
+                    </ul>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>📈 Financial Momentum</h3>
+                    <ul>
+                        <li>145% YoY revenue growth (Q3 2025: CA$545K)</li>
+                        <li>Net losses reduced by 23% YoY</li>
+                        <li>10+ year customer lifecycle value</li>
+                        <li>Multiple revenue streams across sectors</li>
+                    </ul>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>🔧 Competitive Advantages</h3>
+                    <ul>
+                        <li>Proprietary MicronGuard technology</li>
+                        <li>Experienced leadership team (30+ years expertise)</li>
+                        <li>Diversified IP portfolio beyond water filtration</li>
+                        <li>Strategic partnerships and B2B channels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem & Solution -->
+        <div class="slide problem-solution">
+            <div class="slide-header">
+                <h1 class="slide-title">The Problem & Our Solution</h1>
+                <p class="slide-subtitle">Addressing Critical Water Quality Issues</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-title">❌ PFAS Contamination Crisis</div>
+                    <p>70+ million Americans exposed to "forever chemicals" linked to cancer, autoimmune diseases, and developmental issues. Traditional systems fail to remove PFAS effectively.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="solution-title">✅ MicronGuard Technology</div>
+                    <p>Independently certified to remove 99.99% of PFAS, bacteria, viruses, heavy metals, and microplastics while retaining essential minerals.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-title">❌ Expensive Traditional Systems</div>
+                    <p>Reverse osmosis costs $15,000-$25,000, requires power, chemicals, produces wastewater, and needs frequent maintenance.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="solution-title">✅ Cost-Effective Solution</div>
+                    <p>Toppen systems cost under $2,000, require no power/chemicals, produce zero wastewater, and have minimal maintenance needs.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-title">❌ Regulatory Compliance Gap</div>
+                    <p>New EPA standards mandate PFAS removal, but most utilities lack compliant technology to meet 2024 requirements.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="solution-title">✅ Regulatory Alignment</div>
+                    <p>NSF/ANSI certified systems position Toppen as preferred partner for municipalities accessing $9B in federal funding.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Overview -->
+        <div class="slide technology-slide">
+            <div class="slide-header">
+                <h1 class="slide-title">MicronGuard Technology</h1>
+                <p class="slide-subtitle">Three-Stage Advanced Filtration System</p>
+            </div>
+            
+            <div class="tech-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Stage 1: Pre-Filter</h3>
+                    <p>Removes heavy sediments, iron, and hard water minerals to protect downstream filters</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Stage 2: MicronGuard</h3>
+                    <p>Proprietary technology removes 99.99% of PFAS, bacteria, viruses, heavy metals, and microplastics</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Stage 3: Carbon Block</h3>
+                    <p>Final polishing with high-capacity carbon filter for optimal taste and odor removal</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Key Benefits</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">99.99%</div>
+                        <div class="metric-label">PFAS Removal</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">$0</div>
+                        <div class="metric-label">Energy Cost</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">0</div>
+                        <div class="metric-label">Wastewater</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">20</div>
+                        <div class="metric-label">GPM Flow Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Opportunity -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Market Opportunity</h1>
+                <p class="slide-subtitle">Growing U.S. Water Filtration Market</p>
+            </div>
+            
+            <div class="market-chart">
+                <h3>Market Size Projection (2021-2030)</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">$5.85B</div>
+                        <div class="metric-label">2021 Market Size</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">$7.21B</div>
+                        <div class="metric-label">2025 Market Size</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">$9.57B</div>
+                        <div class="metric-label">2030 Projected Size</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">5.6%</div>
+                        <div class="metric-label">CAGR Growth</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Market Drivers</h3>
+                <div class="summary-grid">
+                    <div class="summary-section">
+                        <h3>🏛️ Regulatory Catalysts</h3>
+                        <ul>
+                            <li>EPA's first-ever PFAS standards (April 2024)</li>
+                            <li>$9B federal funding for water infrastructure</li>
+                            <li>Bipartisan Infrastructure Law investments</li>
+                        </ul>
+                    </div>
+                    <div class="summary-section">
+                        <h3>🎯 Target Markets</h3>
+                        <ul>
+                            <li>Healthcare & Dental (compliance-driven)</li>
+                            <li>Agriculture & Food Services</li>
+                            <li>Residential & Commercial buildings</li>
+                            <li>Municipal water systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competitive Advantage -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Competitive Advantage</h1>
+                <p class="slide-subtitle">MicronGuard vs. Traditional Solutions</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Toppen MicronGuard</th>
+                        <th>Reverse Osmosis</th>
+                        <th>UV Systems</th>
+                        <th>Carbon Only</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PFAS Removal</strong></td>
+                        <td class="advantage">99.99%</td>
+                        <td class="disadvantage">Partial</td>
+                        <td class="disadvantage">No</td>
+                        <td class="disadvantage">No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost</strong></td>
+                        <td class="advantage">$1,600</td>
+                        <td class="disadvantage">$15,000-$25,000</td>
+                        <td>$550-$1,000</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Installation</strong></td>
+                        <td class="advantage">30 minutes</td>
+                        <td class="disadvantage">1-3 days</td>
+                        <td>Several hours</td>
+                        <td>Several hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Power Required</strong></td>
+                        <td class="advantage">None</td>
+                        <td class="disadvantage">240V</td>
+                        <td class="disadvantage">Yes</td>
+                        <td class="advantage">None</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wastewater</strong></td>
+                        <td class="advantage">None</td>
+                        <td class="disadvantage">High</td>
+                        <td class="advantage">None</td>
+                        <td class="advantage">None</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maintenance</strong></td>
+                        <td class="advantage">Minimal</td>
+                        <td class="disadvantage">Monthly/Quarterly</td>
+                        <td>Regular</td>
+                        <td>Regular</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Leadership Team -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Leadership Team</h1>
+                <p class="slide-subtitle">Experienced Industry Veterans</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-name">Graham Simmonds</div>
+                    <div class="team-title">Chair & CEO, Aion Therapeutic</div>
+                    <p>25+ years in public company management, M&A, and business development across gaming, consumer products, and technology sectors.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-name">Bill Roche</div>
+                    <div class="team-title">CTO, Toppen Health</div>
+                    <p>30+ years in water treatment technology and product development. Former VP of Operations at Argonide Corp with extensive plastics expertise.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-name">Chuck Freihofer</div>
+                    <div class="team-title">CRO, Toppen Health</div>
+                    <p>20+ years driving business expansion through innovative sales, marketing, and operational strategies. Led Nvatomate to triple revenue growth.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-name">Gerard Maynard</div>
+                    <div class="team-title">VP Operations & Finance, Toppen</div>
+                    <p>30+ years scaling businesses and optimizing process controls. Expert in manufacturing, supply chain management, and strategic scaling.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Performance -->
+        <div class="slide financials-slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Financial Performance</h1>
+                <p class="slide-subtitle">Strong Growth Trajectory</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">CA$545K</div>
+                    <div class="metric-label">Q3 2025 Revenue</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">145%</div>
+                    <div class="metric-label">YoY Growth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">23%</div>
+                    <div class="metric-label">Loss Reduction</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">10+</div>
+                    <div class="metric-label">Year Customer Lifecycle</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Business Model Strengths</h3>
+                <div class="summary-grid">
+                    <div class="summary-section">
+                        <h3>💰 Revenue Streams</h3>
+                        <ul>
+                            <li>High-margin product sales (50-93%)</li>
+                            <li>Recurring filter replacements</li>
+                            <li>B2B partnerships and licensing</li>
+                            <li>Direct-to-consumer channels</li>
+                        </ul>
+                    </div>
+                    <div class="summary-section">
+                        <h3>📊 Key Metrics</h3>
+                        <ul>
+                            <li>497M shares outstanding</li>
+                            <li>200M escrowed shares (3-year)</li>
+                            <li>92M free-trading shares</li>
+                            <li>Strong institutional backing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investment Risks & Mitigations -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Investment Considerations</h1>
+                <p class="slide-subtitle">Balanced Risk Assessment</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-title">⚠️ Key Risks</div>
+                    <ul>
+                        <li><strong>Early-stage profitability:</strong> Net losses persist despite growth</li>
+                        <li><strong>Execution risk:</strong> Scaling partnerships and manufacturing</li>
+                        <li><strong>Competition:</strong> Established brands and emerging technology</li>
+                        <li><strong>Market adoption:</strong> Consumer education and awareness</li>
+                    </ul>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="solution-title">✅ Mitigating Factors</div>
+                    <ul>
+                        <li><strong>Technical superiority:</strong> Proven MicronGuard performance</li>
+                        <li><strong>Regulatory tailwinds:</strong> EPA standards and federal funding</li>
+                        <li><strong>Experienced team:</strong> 30+ years industry expertise</li>
+                        <li><strong>Market timing:</strong> PFAS crisis creates urgent demand</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Investment Thesis</h3>
+                <p style="font-size: 1.2em; line-height: 1.6;">
+                    AION Therapeutic represents a compelling opportunity to invest in the rapidly growing water filtration market. 
+                    With proprietary MicronGuard technology addressing the PFAS crisis, strong regulatory tailwinds, and an experienced 
+                    leadership team, the company is well-positioned to capture significant market share in a $9.57B market.
+                </p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="slide cta-slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Investment Opportunity</h1>
+                <p class="slide-subtitle">Join Us in Revolutionizing Water Filtration</p>
+            </div>
+            
+            <div class="highlight-box" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                <h3>Why Invest in AION Now?</h3>
+                <div class="summary-grid">
+                    <div class="summary-section" style="background: rgba(255,255,255,0.1); border-left: 5px solid white;">
+                        <h3 style="color: white;">🚀 Market Timing</h3>
+                        <ul>
+                            <li>PFAS crisis reaching critical mass</li>
+                            <li>New EPA regulations driving demand</li>
+                            <li>$9B federal funding available</li>
+                            <li>Undervalued at current price</li>
+                        </ul>
+                    </div>
+                    <div class="summary-section" style="background: rgba(255,255,255,0.1); border-left: 5px solid white;">
+                        <h3 style="color: white;">💡 Competitive Moat</h3>
+                        <ul>
+                            <li>Proprietary MicronGuard technology</li>
+                            <li>NSF/ANSI certified performance</li>
+                            <li>Cost advantage over competitors</li>
+                            <li>Strong IP portfolio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <h2 style="margin-bottom: 30px;">Ready to Learn More?</h2>
+                <p style="font-size: 1.3em; margin-bottom: 30px;">
+                    Contact us to discuss investment opportunities and access detailed financial projections
+                </p>
+                <button class="cta-button">Request Investor Materials</button>
+            </div>
+        </div>
+
+        <!-- Appendix -->
+        <div class="slide" style="background: #f8f9fa;">
+            <div class="slide-header">
+                <h1 class="slide-title">Appendix</h1>
+                <p class="slide-subtitle">Additional Information & Certifications</p>
+            </div>
+            
+            <div class="summary-grid">
+                <div class="summary-section">
+                    <h3>🏆 Certifications & Standards</h3>
+                    <ul>
+                        <li>NSF/ANSI Standard 42 (Aesthetic Effects)</li>
+                        <li>NSF/ANSI Standard 53 (Health Effects)</li>
+                        <li>NSF/ANSI Standard 61 (Drinking Water Components)</li>
+                        <li>CSA B483.1 (Canadian Standards)</li>
+                        <li>IAPMO certified for PFAS removal</li>
+                    </ul>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>📋 Intellectual Property</h3>
+                    <ul>
+                        <li>US Patent No. US20190151045A1 (Dental water disinfection)</li>
+                        <li>Provisional patent for dental chair micro-filters</li>
+                        <li>Licensed molecular iodine technology (I2Pure)</li>
+                        <li>Additional patents pending for next-gen systems</li>
+                    </ul>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>🤝 Strategic Partnerships</h3>
+                    <ul>
+                        <li>I2Pure (molecular iodine technology)</li>
+                        <li>Argonide Corp (manufacturing expertise)</li>
+                        <li>Dental supply chain partners</li>
+                        <li>Regional distribution agreements</li>
+                    </ul>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>📊 Market Research Sources</h3>
+                    <ul>
+                        <li>Fortune Business Insights</li>
+                        <li>EPA regulatory filings</li>
+                        <li>NSF International testing data</li>
+                        <li>Industry association reports</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Customer Lifetime Value Model</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">10+</div>
+                        <div class="metric-label">Years Average Customer Life</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">$300</div>
+                        <div class="metric-label">Annual Filter Revenue</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">$3,000+</div>
+                        <div class="metric-label">Total Lifetime Value</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">70%</div>
+                        <div class="metric-label">Filter Replacement Margins</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="slide" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white;">
+            <div class="slide-header">
+                <h1 class="slide-title">Contact Information</h1>
+                <p class="slide-subtitle">Get in Touch with Our Team</p>
+            </div>
+            
+            <div class="summary-grid">
+                <div class="summary-section" style="background: rgba(255,255,255,0.1); border-left: 5px solid white;">
+                    <h3 style="color: white;">📍 Corporate Headquarters</h3>
+                    <p style="color: #ecf0f1; line-height: 1.6;">
+                        AION Therapeutic Inc.<br>
+                        Trading Symbol: CSE: AION<br>
+                        Current Price: C$0.01<br>
+                        Market Cap: C$4.9M
+                    </p>
+                </div>
+                
+                <div class="summary-section" style="background: rgba(255,255,255,0.1); border-left: 5px solid white;">
+                    <h3 style="color: white;">👥 Leadership Contact</h3>
+                    <p style="color: #ecf0f1; line-height: 1.6;">
+                        Graham Simmonds - Chair & CEO<br>
+                        Bill Roche - CTO, Toppen Health<br>
+                        Chuck Freihofer - CRO, Toppen Health<br>
+                        Gerard Maynard - VP Operations & Finance
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                <h3>Important Disclaimers</h3>
+                <p style="font-size: 1em; line-height: 1.6; text-align: left;">
+                    This presentation contains forward-looking statements that involve risks and uncertainties. 
+                    Actual results may differ materially from those projected. This document is for informational 
+                    purposes only and does not constitute an offer to sell or solicitation to buy securities. 
+                    Past performance does not guarantee future results. Please consult with qualified financial 
+                    advisors before making investment decisions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate metric cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all metric cards
+            const metricCards = document.querySelectorAll('.metric-card');
+            metricCards.forEach(card => {
+                card.style.transform = 'translateY(50px)';
+                card.style.opacity = '0';
+                card.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Add click interaction to CTA button
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', function() {
+                    alert('Thank you for your interest! Please contact our investor relations team for more information.');
+                });
+            }
+
+            // Add hover effects to team cards
+            const teamCards = document.querySelectorAll('.team-card');
+            teamCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
